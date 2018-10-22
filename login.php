@@ -71,7 +71,7 @@
 			<div id="body">	
 				<div id = "form">
 					<h1>Login</h1>
-					<form method="post" action="login.php" name="myform">
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="myform">
 						<span class="error"><?php echo "$message";?><br>* required fields</span><br>
 							<input type="email" name="email" value="<?php echo "$email"?>" placeholder="email"><span class="error">*<?php echo "$email_err";?></span><br>
 						<input type="password" name="pass" id="password" oncopy="return false" placeholder="Password"><span class="error">*<?php echo "$pass_err";?></span><br>
