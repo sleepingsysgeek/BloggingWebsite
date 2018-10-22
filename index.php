@@ -3,6 +3,8 @@
 	if(!(isset($_SESSION["login"]))){
 		$_SESSION["login"] = 0;
 	}
+
+<?php ?>
 ?>
 <html>
 	<head>
