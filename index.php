@@ -65,7 +65,7 @@
 									<li><a href="profile.php">My Profile</a></li>
 									<li><a href="blog.php">New Blog</a></li>
 									<li><a href="myblogs.php">My Blogs</a></li>
-									<li><a href="logout.php">LogOut</a></li></strong>
+									<li><a href="logout.php">Log Out</a></li></strong>
 								</ul>
 								</div></span>
 							<span id="name" onclick="location.href=\'profile.php\';">'.$_SESSION["fname"]." ".$_SESSION["lname"].'</span>';
@@ -76,6 +76,8 @@
 			</div>
 			
 			<div id="quotes" onclick="hide()">
+				<p style="color: #eee; text-align: left; font-family: courier new  ; font-size: 4.5vw; margin: 0;margin-left: 3%;  padding-top: 8%; ">Let your ideas wake you up..</p>
+				<p style="color: #fff; text-align: left; font-family: courier new; text-decoration: line-through; font-size: 4.5vw; margin: 0;margin-left: 60%;  padding-top: 1%; ">Not alarm</p>
 				<button id="createblogbutton" onclick="location.href='blog.php';">Create Your Blog</button>
 			</div>
 			

@@ -82,9 +82,9 @@
 					<h1>Login</h1>
 					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="myform">
 						<span class="error"><?php echo "$message";?><br>* required fields</span><br>
-							<input type="email" name="email" value="<?php echo "$email"?>" placeholder="email"><span class="error">*<?php echo "$email_err";?></span><br>
+							<input type="email" name="email" value="<?php echo "$email"?>" placeholder="Email"><span class="error">*<?php echo "$email_err";?></span><br>
 						<input type="password" name="pass" id="password" oncopy="return false" placeholder="Password"><span class="error">*<?php echo "$pass_err";?></span><br>
-						<span id="forgotpass"><a href="forgotpass.php">Forgot password?</a></span><br>
+						<span id="forgotpass"><a href="forgotpass.php">Forgot Password?</a></span><br>
 						<input type="submit" id="submit" value="Login">
 						<input type="button" id="reset" onclick="location.href='login.php';" value="Reset"><br><br>
 						<span id="belowbutton" style="margin-left: 30%">New User ? <a href="register.php"> SignUp </a></span>
