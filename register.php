@@ -19,8 +19,8 @@
 				echo "<script type='text/javascript'>location.href='profile.php';</script>";
 			}
 			$error = 0; 
-			$fname = $lname = $email = $contact = $pass = "";
-			$fname_err = $lname_err = $email_err = $contact_err = $pass_err = $cnf_err = "";
+			$fname = $lname = $email = $contact = $pass = $question = $answer = "";
+			$fname_err = $ques_err = $ans_err = $lname_err = $email_err = $contact_err = $pass_err = $cnf_err = "";
 			
 			function test_input($input){
 				$input = trim($input);
@@ -36,6 +36,19 @@
 				$fname = test_input($_POST["fname"]);
 				
 				$lname = test_input($_POST["lname"]);
+				
+				if($_POST["question"] == "Select your question"){
+					$ques_err = "select a question";
+					$error = 1;
+				}
+				$question = test_input($_POST["question"]);
+				
+				if(empty($_POST["answer"])){
+					$ans_err = "answer is required";
+					$error = 1;
+				}
+				$answer = test_input($_POST["answer"]);
+				
 				
 				if(empty($_POST["email"])){
 					$email_err = "email is required";
@@ -68,12 +81,12 @@
 					if($conn->connect_error){
 						die ("Connection failed:".$conn->connect_error);
 					}
-					$sql = "insert into user values('$fname','$email','$contact','$pass','$lname')";
+					$sql = "insert into user values('$fname','$email','$contact','$pass','$lname','$question','$answer')";
 					if($conn->query($sql) == TRUE){
 						echo "<script type='text/javascript'>location.href = 'login.php';</script>";
 					}
 					else{
-						$cnf_err ="Email ID should be unique";
+						$cnf_err =$conn->error;
 					}
 					$conn -> close();
 				}
@@ -94,7 +107,7 @@
 					<button class="header_button" onclick="location.href='login.php';">Login</button>
 				</div>
 			</div>
-			<div id="body">
+			<div id="body" style="height: auto">
 				<div id = "form">
 					<h1>SignUp</h1>
 					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -103,8 +116,17 @@
 						<input type="text" name="lname" value="<?php echo "$lname"?>" placeholder="Last Name" pattern="[a-zA-Z]{3,30}"><br>
 						<input type="email" name="email" value="<?php echo "$email"?>" placeholder="email"><span class="error">*<?php echo "$email_err";?></span><br>
 						<input type="text" name="contact" pattern="[0-9]{10}" value="<?php echo "$contact"?>" placeholder="Contact Number" maxlength="10"><span class="error">*<?php echo "$contact_err";?></span><br>
+						<select name = "question">
+							<option>Select your question</option>
+							<option>What was your first pet name</option>
+							<option>Who was your first crush</option>
+							<option>What is your favourite dish</option>
+							<option>What is your favourite colour</option>
+							<option>what do you call you girlfriend</option>
+						</select><span class="error">*<?php echo "$ques_err";?></span><br>
+						<input type="text" name="answer" value="<?php echo "$answer"?>" placeholder="Answer" pattern="[a-zA-Z]{3,30}"><span class="error">*<?php echo "$ans_err";?></span><br>
 						<input type="password" name="pass" id="password" oncopy="return false" placeholder="Password"><span class="error">*<?php echo "$pass_err";?></span><br>
-						<input type="password" id="cnfpassword" name="cnfpass" onpaste="return false"  placeholder="Confirm Password" onkeyup="check()"><span class="error">*<?php echo "$cnf_err";?></span><span id="message"></span><br>
+						<input type="password" id="cnfpassword" name="cnfpass" onpaste="return false"  placeholder="Confirm Password" onkeyup="check()"><span class="error">*</span><span id="message"></span><br>
 						<script>
 							function check() {
 								if(document.getElementById("password").value == document.getElementById("cnfpassword").value){

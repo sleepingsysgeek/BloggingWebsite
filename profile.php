@@ -65,7 +65,8 @@
 						<input type="text" id="contact" value="<?php echo $_SESSION["contact"]?>" disabled><br>
 						<input type="hidden" id="pass" oncopy="return false" onpaste="return false" placeholder="Enter password"><br>
 						<input type="button" id="reset" onclick="location.href='editprofile.php';" value="Edit profile" style="background-color: rgba(0,100,0,0.9);">
-						<input type="button" id="reset" onclick="location.href='logout.php';" value="    LogOut    " style="background-color: rgba(0,100,0,0.9);"><br>
+						<input type="button" id="reset" onclick="location.href='logout.php';" value="    LogOut    " style="background-color: rgba(0,100,0,0.9);">
+						<input type="button" style="margin-left: 11%" id="reset" onclick="location.href='updatepass.php';" value="Update password" style="background-color: rgba(150,150,150,0.9);"><br>
 						<input type="button" id="reset" onclick="location.href='deleteprofile.php';" value="Delete Profile" style="background-color: rgba(255,0,0,0.9); margin-left: 15%">
 					</form>
 				</div>		

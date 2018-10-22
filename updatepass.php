@@ -6,79 +6,52 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body> 
-		<?php 
+		<?php
+			if($_SESSION["login"] == 0){
+				echo "<script type='text/javascript'>location.href='login.php';</script>";
+			} 
 			$error = 0; 
-			$email = $pass = $question = $answer = $message = $fname = $lname = "";
-			$email_err = $pass_err = $cnf_err =$ans_err =  $contact_error = "";
-			if(isset($_SESSION["question"])){
-				$question = $_SESSION["question"];
-			}
-			if(!isset($_SESSION["fname"])){
-				$_SESSION["fname"] = "";
-				$_SESSION["lname"] = "";
-			}
+			$question = $_SESSION["question"];
+			$email = $_SESSION["email"];
+			$pass = $answer = $message = "";
+			$pass_err = $cnf_err = $ans_err = "";
 			if($_SERVER["REQUEST_METHOD"] == "POST"){
-				if(isset($_POST["email"])){
-					if(empty($_POST["email"])){
-						$email_err = "email is required";
-						$error = 1;
-					}
-					$_SESSION["email"] = $email = $_POST["email"];
+				if(empty($_POST["pass"])){
+					$pass_err = "password is required";
+					$error = 1;
+				}
+				$pass = md5($_POST["pass"]);
+
+				if(empty($_POST["answer"])){
+					$ans_err = "answer is required";
+					$error = 1;
+				}
+				$answer = $_POST["answer"];
+				
+				if(empty($_POST["cnfpass"])){
+					$cnf_err = "confirm password";
+					$error = 1;
+				}
+			}
+			if($error == 0){
+				$server = "localhost";
+				$username = "joker";
+				$password = "djoker";
+				$db = "project";
+				$conn = new mysqli($server,$username,$password,$db);
+				if($conn->connect_error){
+					die ("Connection failed:".$conn->connect_error);
 				}
 				if(isset($_POST["pass"])){
-					if(empty($_POST["pass"])){
-						$pass_err = "password is required";
-						$error = 1;
+					$sql = "update user set password = '$pass' where email = '$email' and answer = '$answer'";
+					if($conn->query($sql) == TRUE){
+						echo "<script type='text/javascript'>location.href = 'profile.php';</script>";
 					}
-					$pass = md5($_POST["pass"]);
-
-					if(empty($_POST["answer"])){
-						$ans_err = "answer is required";
-						$error = 1;
-					}
-					$answer = $_POST["answer"];
-					
-					if(empty($_POST["cnfpass"])){
-						$cnf_err = "confirm password";
-						$error = 1;
-					}
-				}
-				if($error == 0){
-					$server = "localhost";
-					$username = "joker";
-					$password = "djoker";
-					$db = "project";
-					$conn = new mysqli($server,$username,$password,$db);
-					if($conn->connect_error){
-						die ("Connection failed:".$conn->connect_error);
-					}
-					if(isset($_POST["pass"])){	
-						$email = $_SESSION["email"];
-						$sql = "update user set password = '$pass' where email = '$email' and answer = '$answer'";
-						if($conn->query($sql) == TRUE){
-							echo "<script type='text/javascript'>location.href = 'login.php';</script>";
-						}
-						else{
-							$ans_err="Your answer is wrong";
-						}
-					}	
 					else{
-						$sql = "select question,firstname,lastname from user where email = '$email'";
-						$result = $conn->query($sql);
-						if($result -> num_rows > 0){
-							while($row = $result -> fetch_assoc()){
-								$_SESSION["question"] = $row["question"];
-								$_SESSION["fname"] = "Hello! ".$row["firstname"];
-								$_SESSION["lname"] = $row["lastname"];
-								$question = $row["question"];
-							}
-						}
-						else{
-							$message = "email id is not registered";
-						}
+						$ans_err="Your answer is wrong";
 					}
-					$conn -> close();
-				}
+				}	
+				$conn -> close();
 			}
 		?> 
 		<div id="container">
