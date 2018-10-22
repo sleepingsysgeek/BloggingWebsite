@@ -1,0 +1,349 @@
+body{
+	margin: 0;
+	background-color: #fff;
+	background-image:url(back3.jpeg);
+}
+form{
+	/*border:1px solid green;
+*/	margin-left: 28%;
+}
+form input{
+	font-size: 1.3vw;
+	font-family: arial;
+	padding: 2% 4%;
+	width:60%;
+	border: 2px solid white;
+	border-radius: 5px;
+	text-align: center;
+	margin: 1%;
+	background-color: transparent;
+	color: white;
+}
+#profileemail:hover{
+	width: 80%;
+}
+
+#body{
+	/*border:1px solid red;*/
+	height: 100%;
+}
+
+#form{
+	/*border:1px solid black;*/
+	position: relative;
+	top:10%;
+	color: white;
+	margin :0 auto;
+	width: 50%;
+}
+
+#form h1{
+	font-family: courier new;
+	color: white;
+	text-align: center;
+}
+
+#submit{
+	margin-top: 2%;
+	margin-left: 10%;
+	padding:2% 4%;
+	width:auto;
+	font-weight: bold;
+}
+
+#reset{
+	width: auto;
+	margin-top: 2%;
+	font-weight: bold;
+	padding:2% 4.1%;
+}
+
+#logout{
+	font-weight: bold;
+	margin-left: 15%;
+}
+
+.error{
+			color:red/*#099fff*/;
+			font-size: 14px;
+}
+
+.header_button{
+	float:right;
+	font-size: 1.5vw;
+	background-color: transparent;
+	font-family: courier new;
+	font-weight: bold;
+	padding:2% 7%;
+	border:none;
+}
+
+#container{
+	margin: 0 auto;
+	width: 100%; 
+}
+
+#header{
+	width: 100%;
+	/*border:1px solid;*/
+	margin: 0 auto;
+	height:12%;
+	background-color:#fff;
+}
+
+#name1{
+	color:#ccc;
+	font-size: 1.5vw;
+	font-family: arial;
+}
+
+#logo{
+	/*border:1px solid black;*/
+	margin:0.6% 1%;
+	margin-right: 0;
+	background-repeat: no-repeat;
+	float: left;
+	height:80%;
+	display: inline-block;
+	background-image: url();
+}
+
+#menu{
+	display: inline-block;
+	/*border:1px solid black;*/
+	margin:0.6% 0%;
+	width:55%;
+	padding: 0px;
+	float: left;
+	height:80%;
+}
+
+#menu ul{
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li{
+	font-family: courier new;
+	margin:1.8% 0%;
+	position: relative;
+	width: 8%;
+	display: inline-block;
+	padding:1% 7.55%;
+	font-weight: bold;
+	font-size: 1.5vw;
+	border-right:1px solid black;	
+	/*border:1px solid black;*/
+}
+
+#menu ul li a{
+	text-decoration: none;
+	color:#555;
+	margin: 0px 0px;
+}
+
+#header_right{
+	display: inline-block;
+	float: right;
+	width: 20%;
+	margin:1.5% 0%;
+	/*border:1px solid black;*/
+}
+
+
+#quotes{
+	width: 100%;
+	height: 88%;
+	background-color: rgba(0,0,0,0.5);
+	/*border:1px solid black;*/
+}
+
+#createblogbutton{
+	position: absolute;
+	left:33%;
+  	bottom: 10%;
+  	opacity:0.7;
+  	/*vertical-align: bottom;*/
+  	color: white;
+  	font-size: 1.5vw;
+  	background-color: black;
+  	border:2px solid grey;
+  	border-radius: 10px;
+  	padding:1% 10%;
+}
+
+.blog{
+	background-color:transparent;
+	color:#fff;
+	height:auto;
+	margin:30px 20px;
+}
+
+
+#blogcontainer{
+	width: 100%;
+	background-color:rgba(0,0,0,0.7);
+	height:auto;
+	overflow: hidden;
+}
+
+#detail{
+	width: 20%;
+	/*background-color:rgba(0,0,0,0.7);*/
+	text-align: left;
+	height:auto;
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+}
+
+#blog{
+	width:80%;
+	/*background-color:rgba(0,0,0,0.7);*/
+	text-align: left;
+	height:auto;
+	border-bottom: 1px solid grey;
+	display: inline-block;
+	float: right;
+	overflow: hidden;
+}
+
+#message{
+	font-size: 12px;
+}
+
+#belowbutton a{
+	color: #0c0;
+}
+
+#forgotpass{
+	float: right;
+	margin-right: 40%;
+	font-size: 1vw;
+}
+
+#forgotpass a{
+	color: #fff;
+}
+
+#name{
+	float: right;
+	height: 50%;
+	padding-top: 2%;
+	/*border:1px solid black;*/
+	font-size: 1.7vw;
+	font-family: arial;
+}
+
+#name:hover {
+	cursor:pointer;
+}
+
+
+#optionimage{
+	float:right;
+	margin: 3.5% 5%;
+}
+
+#optionimage:hover {
+	cursor:pointer;
+}
+
+#option{
+	position:fixed;
+	top:8%;
+	right:1%;
+	width:auto;
+	width: 10%;
+	display: none;
+	border:1px solid grey;
+	border-bottom: 1px solid grey;
+	background-color:rgba(0,0,0,0.8);
+}
+
+
+
+#option ul{
+	margin:0;
+	padding:0;
+}
+
+#option ul li{
+	list-style: none;
+	color: black;
+	font-family: arial;
+	font-size: 1.1vw;
+	padding:7% 15%;
+	margin: 0% 0%;
+	border-bottom: 1px solid grey;
+}
+
+#option ul li a{
+	color: white;
+	text-decoration: none;
+	
+}
+
+#email{
+	font-size: 14px;
+	color: #0a0;
+}
+#title{
+	font-family: arial;
+	font-size: 1.5vw;
+	letter-spacing:1px;
+
+}
+#titletext{
+	font-family: arial;
+	font-size: 1.5vw;
+}
+
+#footer{
+	width: 100%;
+	height: 6%;
+	background-color: #001;
+}
+
+#footermargin{
+	position: ;
+	width: 100%;
+	height: 10%;
+	opacity: 0.7;
+	background-color: #000;
+}
+
+#footer ul{
+	margin: 0;
+	padding: 0;
+}
+
+#footer ul li{
+	display: inline-block;
+	color: white;
+	position: relative;
+	margin: 0.25% 0%;
+	padding:0% 4%;
+	border-right:1px solid white;
+}
+#footer ul li a{
+	text-decoration: none;
+	color: #ccc;
+}
+
+#floatbutton{
+	position: fixed;
+	bottom:8%;
+	background-color: transparent;
+	right:5%;
+	padding: 1%;
+	font-size: 1vw;
+	border-radius: 50%;
+	color:white;
+	border:1px solid white;
+}
+
+#footerlive{
+	color: #888;
+	font-size: 2vw;
+}
