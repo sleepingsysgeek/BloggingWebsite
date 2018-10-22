@@ -72,7 +72,7 @@
 				<div id="menu">
 					<ul>
 						<li><a href="index.php">HOME</a></li>
-						<li><a href="#blog">BLOG</a></li>
+						<li><a href="index.php#blog">BLOGS</a></li>
 						<li><a href="about.php">ABOUT</a></li>
 						<li style="border-right: none;"><a href="contact.php ">CONTACT</a></li>
 					</ul>
@@ -91,10 +91,10 @@
 									<li><a href="profile.php">My Profile</a></li>
 									<li><a href="blog.php">New Blog</a></li>
 									<li><a href="myblogs.php">My Blogs</a></li>
-									<li><a href="logout.php">LogOut</a></li></strong>
+									<li><a href="logout.php">Log Out</a></li></strong>
 								</ul>
 								</div>
-							<span id="name">'.$_SESSION["fname"]." ".$_SESSION["lname"].'</span>';
+							<span id="name" onclick="location.href=\'profile.php\';">'.$_SESSION["fname"]." ".$_SESSION["lname"].'</span>';
 						}
 					?>
 					
@@ -102,13 +102,13 @@
 			</div>
 			<div id = "body" onclick="hide()" style="background-color:#555; height: auto;border-top: 1px solid gray;">
 				<div id = "form" style="margin: 0 auto; width: 80%; position: relative;top:0;">
-					<h1>create blog</h1>
+					<h1>Create Blog</h1>
 					<form method="post" style="margin: 0 auto;" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-						<span class="error">* required fields</span><br>
+						<span class="error">* required field</span><br>
 						<input type="text" style="padding: 1%; float: left; width:40%; margin-left:30%;";value = "<?php echo $title ?>" placeholder="Title" name="title"><span class="error">*<?php echo $title_err?></span><br>
 						
 						<textarea name="blog" style="width: 100%; height: 80%;  border:2px solid gray;" placeholder="Enter your blog here">Create your blog<?php echo $blog ?></textarea><span class="error">*<?php echo $blog_err?></span><br>
-						<input type="submit" style="margin-left: 40%; padding: 1%; width: 20%;" id="submit" value="Make Blog">
+						<input type="submit" style="margin-left: 40%; padding: 1%; width: 20%;" id="submit" value="Create Blog">
 					</form>
 				</div>
 			</div>	

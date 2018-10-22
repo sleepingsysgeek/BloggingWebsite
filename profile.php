@@ -49,7 +49,7 @@
 							<li><a href="profile.php">My Profile</a></li>
 							<li><a href="blog.php">New Blog</a></li>
 							<li><a href="myblogs.php">My Blogs</a></li>
-							<li><a href="logout.php">LogOut</a></li></strong>
+							<li><a href="logout.php">Log Out</a></li></strong>
 						</ul>
 					</div>
 					<span id="name"><?php echo $_SESSION["fname"]." ".$_SESSION["lname"]?></span>

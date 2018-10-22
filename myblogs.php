@@ -46,7 +46,7 @@
 				<div id="menu">
 					<ul>
 						<li><a href="index.php">HOME</a></li>
-						<li><a href="#blog">BLOG</a></li>
+						<li><a href="#blog">BLOGS</a></li>
 						<li><a href="about.php">ABOUT</a></li>
 						<li style="border-right: none;"><a href="contact.php ">CONTACT</a></li>
 					</ul>
@@ -59,10 +59,10 @@
 							<li><a href="profile.php">My Profile</a></li>
 							<li><a href="blog.php">New Blog</a></li>
 							<li><a href="myblogs.php">My Blogs</a></li>
-							<li><a href="logout.php">LogOut</a></li></strong>
+							<li><a href="logout.php">Log Out</a></li></strong>
 						</ul>
 					</div>
-					<span id="name"><?php echo $_SESSION["fname"]." ".$_SESSION["lname"]?></span>
+					<span id="name" onclick="location.href='profile.php';"><?php echo $_SESSION["fname"]." ".$_SESSION["lname"]?></span>
 				</div>	
 			</div>
 			<div id="quotes" onclick="hide()">
