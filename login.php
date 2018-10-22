@@ -10,6 +10,14 @@
 			if($_SESSION["login"] == 1){
 				echo "<script type='text/javascript'>location.href='profile.php';</script>";
 			}
+			if(isset($_SESSION["question"])){
+				unset($_SESSION["question"]);
+			}
+
+			if(isset($_SESSION["fname"])){
+				unset($_SESSION["fname"]);
+				unset($_SESSION["lname"]);
+			}
 			$message = "";
 			$error = 0;
 			$email = $pass = "";
@@ -34,7 +42,7 @@
 					if($conn->connect_error){
 						die ("Connection failed:".$conn->connect_error);
 					}
-					$sql = "select firstname,lastname,email,contact from user where email = '$email' and password = '$pass'";
+					$sql = "select firstname,lastname,email,contact,question from user where email = '$email' and password = '$pass'";
 					$result = $conn->query($sql);
 					if($result -> num_rows > 0){
 						while($row = $result -> fetch_assoc()){
@@ -42,6 +50,7 @@
 							$_SESSION["lname"] = $row["lastname"];
 							$_SESSION["contact"] = $row["contact"];
 							$_SESSION["email"] = $row["email"];
+							$_SESSION["question"] = $row["question"];
 							$_SESSION["login"] = 1;
 						}
 						echo "<script type='text/javascript'>location.href='profile.php';</script>";
