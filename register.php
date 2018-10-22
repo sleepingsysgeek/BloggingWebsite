@@ -117,7 +117,7 @@
 						<input type="email" name="email" value="<?php echo "$email"?>" placeholder="email"><span class="error">*<?php echo "$email_err";?></span><br>
 						<input type="text" name="contact" pattern="[0-9]{10}" value="<?php echo "$contact"?>" placeholder="Contact Number" maxlength="10"><span class="error">*<?php echo "$contact_err";?></span><br>
 						<select name = "question">
-							<option>Select your question</option>
+							<option>Select your security question</option>
 							<option>What was your first pet name</option>
 							<option>Who was your first crush</option>
 							<option>What is your favourite dish</option>

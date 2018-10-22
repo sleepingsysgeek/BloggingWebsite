@@ -97,7 +97,7 @@
 								    }
 								</script>
 								<input type="submit" id="submit" value="Update">
-								<input type="button" id="reset" onclick="location.href=\'login.php\';" value="Cancel"><br><br>';	
+								<input type="button" id="reset" onclick="location.href=\'profile.php\';" value="Cancel"><br><br>';	
 						
 							}
 							else{
