@@ -10,21 +10,31 @@
 			if($_SESSION["login"] == 1){
 				echo "<script type='text/javascript'>location.href='profile.php';</script>";
 			}
-			$message = "";
-			$error = 0;
-			$email = $pass = $contact = $question= "";
-			$email_err = $pass_err = "";
+			$error = 0; 
+			$email = $pass = $question = $message = "";
+			$email_err = $pass_err = $cnf_err = $contact_error = "";
 			if($_SERVER["REQUEST_METHOD"] == "POST"){
 				if(empty($_POST["email"])){
 					$email_err = "email is required";
 					$error = 1;
 				}
 				$email = $_POST["email"];
-				if(empty($_POST["pass"])){
-					$pass_err = "password is required";
-					$error = 1;
+				if(isset($_POST["pass"])){
+					if(empty($_POST["pass"])){
+						$pass_err = "password is required";
+						$error = 1;
+					}
+					$pass = md5($_POST["pass"]);
+					
+					if(empty($_POST["cnfpass"])){
+						$cnf_err = "";
+						$error = 1;
+					}
 				}
-				$pass = md5($_POST["pass"]);
+				else{
+					$_SESSION["email"] = $email;
+				}
+				$email = $_SESSION["email"];
 				if($error == 0){
 					$server = "localhost";
 					$username = "joker";
@@ -34,20 +44,26 @@
 					if($conn->connect_error){
 						die ("Connection failed:".$conn->connect_error);
 					}
-					$sql = "select firstname,lastname,email,contact from user where email = '$email' and password = '$pass'";
-					$result = $conn->query($sql);
-					if($result -> num_rows > 0){
-						while($row = $result -> fetch_assoc()){
-							$_SESSION["fname"] = $row["firstname"];
-							$_SESSION["lname"] = $row["lastname"];
-							$_SESSION["contact"] = $row["contact"];
-							$_SESSION["email"] = $row["email"];
-							$_SESSION["login"] = 1;
+					if(isset($_POST["pass"])){	
+						$sql = "insert into user(password) values($pass') where email = '$email' and answer = '$answer'";
+						if($conn->query($sql) == TRUE){
+							echo "<script type='text/javascript'>location.href = 'login.php';</script>";
 						}
-						echo "<script type='text/javascript'>location.href='profile.php';</script>";
-					}
+						else{
+						}
+					}	
 					else{
-						$message = "email id or password incorrect";
+						$sql = "select question from user where email = '$email'";
+						$result = $conn->query($sql);
+						if($result -> num_rows > 0){
+							while($row = $result -> fetch_assoc()){
+								$_SESSION["question"] = $row["question"];
+							}
+							echo "<script type='text/javascript'>location.href='profile.php';</script>";
+						}
+						else{
+							$message = "email id is not registered";
+						}
 					}
 					$conn -> close();
 				}
@@ -71,15 +87,27 @@
 			<div id="body">	
 				<div id = "form">
 					<h1>Login</h1>
-					<form method="post" action="login.php" name="myform">
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="myform">
 						<span class="error"><?php echo "$message";?><br>* required fields</span><br>
-						<input type="text" name="contact" pattern="[0-9]{10}" value="<?php echo $contact?>" placeholder="Contact Number" maxlength="10"><span class="error">*<?php echo "";?></span><br>
+						<input type="email" name="email" value="<?php echo "$email"?>" placeholder="email"><span class="error">*<?php echo "$email_err";?></span><br>
 						<p><?php echo $question ?> </p>
 						<?php
 							if($question != ""){
 								echo 
 								'<input type="password" name="pass" id="password" oncopy="return false" placeholder="New Password"><span class="error">*<?php echo "$pass_err";?></span><br>
-								<input type="password" name="cnfpass" id="password" oncopy="return false" placeholder="Confirm Password"><span class="error">*<?php echo "$pass_err";?></span><br>
+								<input type="password" id="cnfpassword" name="cnfpass" onpaste="return false"  placeholder="Confirm Password" onkeyup="check()"><span class="error">*<?php echo "$cnf_err";?></span><span id="message"></span><br>
+								<script>
+									function check() {
+										if(document.getElementById("password").value == document.getElementById("cnfpassword").value){
+							    			document.getElementById("message").style.color = "green";
+							    			document.getElementById("message").innerHTML = "password matched";
+							    		}
+								    	else{
+								    		document.getElementById("message").style.color = "red";
+								    		document.getElementById("message").innerHTML = "password not matched";
+								    	}
+								    }
+								</script>
 								<input type="submit" id="submit" value="Update">
 								<input type="button" id="reset" onclick="location.href=\'login.php\';" value="Cancel"><br><br>';	
 						
