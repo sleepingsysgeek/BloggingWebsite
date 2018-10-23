@@ -75,9 +75,10 @@
 				</div>	
 			</div>
 			
-			<div id="quotes" onclick="hide()">
-				<p style="color: #eee; text-align: left; font-family: courier new  ; font-size: 4.5vw; margin: 0;margin-left: 3%;  padding-top: 8%; ">Let your ideas wake you up..</p>
-				<p style="color: #fff; text-align: left; font-family: courier new; text-decoration: line-through; font-size: 4.5vw; margin: 0;margin-left: 60%;  padding-top: 1%; ">Not alarm</p>
+			<div id="quotes" onclick="hide()" style="margin-top: 0; overflow: hidden;">
+				<p style="color: #bbb; text-align: center; font-family: arial  ; font-size: 3.5vw;overflow: hidden; margin-top: 8%; ">Let your ideas wake you up..
+				<span style="color: #ddd; text-align: center; font-family: arial;padding-bottom: 2%; font-size:3.5vw;">not alarm</span></p><br><br>
+				<p style="color: #ccc; text-align: center;margin-top: 11%; font-family: arial; font-size:2.3vw;">Need to show something? write it ...It will be published to world.</p>
 				<button id="createblogbutton" onclick="location.href='blog.php';">Create Your Blog</button>
 			</div>
 			
