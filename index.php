@@ -76,7 +76,7 @@
 			</div>
 			
 			<div id="quotes" onclick="hide()" style="margin-top: 0; overflow: hidden;">
-				<p style="color: #bbb; text-align: center; font-family: cursive;  ; font-size: 3.5vw;overflow: hidden; margin-top: 8%; ">Let your ideas wake you up..
+				<p style="color: #ddd; text-align: center; font-family: cursive;  ; font-size: 3.5vw;overflow: hidden; margin-top: 8%; ">Let your ideas wake you up..
 				<span style="color: #ddd; text-align: center; font-family: arial;padding-bottom: 2%; font-size:3.5vw;">Not alarm !!</span></p><br>
 				<p style="color: #ccc; text-align: center;margin-top: 11%; font-family: arial; font-size:2.3vw;">"Need to share something? Compose it... Present it to the world"</p>
 				<button id="createblogbutton" onclick="location.href='blog.php';">Create Your Blog</button>
