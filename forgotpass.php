@@ -147,8 +147,8 @@
 						<li><a href="index.php"><span id="footerlive">LiveBlog</span></a></li>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="about.php">About</a></li>
-						<li><a href="contact.php">Contact</a></li>
-						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li>
+						<li><a href="contact.php">Contact</a></li><!-- 
+						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li> -->
 						<li style="border-right: none;">&copy;Copyright</li>
 					</ul>
 			</div>				

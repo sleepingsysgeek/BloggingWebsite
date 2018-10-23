@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	if(!(isset($_SESSION["login"]))){
-		$_SESSION["login"] = 0;
-	}
 ?>
 <html>
 	<head>
@@ -28,18 +25,6 @@
 		</script>
 	</head>
 	<body> 
-		<a name="top"></a>
-		<?php
-			$server = "localhost";
-			$username = "joker";
-			$password = "djoker";
-			$db = "project";
-			$conn = new mysqli($server,$username,$password,$db);
-			if($conn->connect_error){
-				die ("Connection failed:".$conn->connect_error);
-			}
-			$sql = "select user.firstname,user.lastname,user.email,blog.title,blog.blog from user, blog where user.email = blog.email order by id desc";
-		?>
 		<div id="container" >
 			<div id = "header">
 				<div id="logo" onclick="location.href='index.php';"><img src="logo.png"></div>
@@ -74,45 +59,20 @@
 					
 				</div>	
 			</div>
-			
-			<div id="quotes" onclick="hide()" style="margin-top: 0; overflow: hidden;">
-				<p style="color: #bbb; text-align: center; font-family: cursive;  ; font-size: 3.5vw;overflow: hidden; margin-top: 8%; ">Let your ideas wake you up..
-				<span style="color: #ddd; text-align: center; font-family: arial;padding-bottom: 2%; font-size:3.5vw;">Not alarm !!</span></p><br>
-				<p style="color: #ccc; text-align: center;margin-top: 11%; font-family: arial; font-size:2.3vw;">"Need to share something? Compose it... Present it to the world"</p>
-				<button id="createblogbutton" onclick="location.href='blog.php';">Create Your Blog</button>
-			</div>
-			
-			<?php
-				$result = $conn->query($sql);
-				if($result -> num_rows > 0){
-					while($row = $result -> fetch_assoc()){
-						$name = $row["firstname"]." ".$row["lastname"];
-						$email = $row["email"];
-						$title = $row["title"];
-						$blog = $row["blog"];
-						echo 
-						'<div id="blogcontainer" onclick="hide()">
-						<div id="detail">
-							<div class = "blog">
-								<span id="name1">'.$name.'</span><br>
-								<span id="email">'.$email.'</span><br><br>
-							</div>
-						</div>
-						<div id="blog">
-							<button id="floatbutton" onclick="location.href=\'#top\';">Top</button>
-							<div class="blog">
-								<br><br><br><span id="title"><strong>Title: </strong></span><span id="titletext">'.$title.'</span>
-								<p>'.$blog.'</p>
-							</div>
-						</div></div>'	;
-					}		
-				}
-				else{
-					echo '<div id="container">NO BLOGS YET</div>';
-				}
-					$conn -> close();
-				?>	
-			<div id="footermargin"></div>	
+			<div id="body" onclick="hide()">
+				<div id = "form">
+					<h1><u>AboutUs</u></h1>
+					<form style=" margin-left: 28%; margin-top: 7%;" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+					<span style="font-size: 2vw; text-align: center; text-transform: capitalize;">
+						Vision:<br><span class = "detail"><strong>
+						Providing a platform to share thoughts and experiences. All that we serve is quality and we service all with excellence.</strong></span> <br><br>
+						<!-- Email: &nbsp;&ensp;&ensp;<span class="detail"></span><br> -->
+						Developer:<br><br><span class = "detail">Praveen Mishra<br>Poonam Verma<br>Gautam Prasad Gupta<br>Ashutosh Choudhary<br>Shravan Kumar</span><br>
+					</span>
+						<input type="hidden" id="pass" oncopy="return false" onpaste="return false" placeholder="Enter password"><br>
+					</form>
+				</div>		
+			</div>		
 			<div id="footer">
 				<ul>
 						<li><a href="index.php"><span id="footerlive">LiveBlog</span></a></li>

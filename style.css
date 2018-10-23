@@ -4,8 +4,8 @@ body{
 	background-image:url(back3.jpeg);
 }
 form{
-	/*border:1px solid green;
-*/	margin-left: 28%;
+	/*border:1px solid green;*/
+	margin-left: 28%;
 }
 form input{
 	font-size: 1.3vw;
@@ -21,6 +21,11 @@ form input{
 }
 #profileemail:hover{
 	width: 80%;
+}
+
+.detail{
+	color: #eee;
+	font-size: 1.5vw;
 }
 
 #body{
@@ -79,6 +84,7 @@ form input{
 }
 
 #container{
+	background-color: rgba(0,0,0,0.3);
 	margin: 0 auto;
 	width: 100%; 
 }

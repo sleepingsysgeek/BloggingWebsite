@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script type="text/javascript" src="nicEdit-latest.js"></script> <script type="text/javascript">
+		<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
     //<![CDATA[
             bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
       //]]>

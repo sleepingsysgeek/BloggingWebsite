@@ -57,17 +57,18 @@
 			</div>
 			<div id="body" onclick="hide()">
 				<div id = "form">
-					<h1>About</h1>
-					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-						<input type="text" id="fname" value="<?php echo $_SESSION['fname']?>" disabled="true"><br>
-						<input type="text" id="lname" value="<?php echo $_SESSION['lname']?>" disabled><br>
-						<input type="email" id="profileemail" name="email" value="<?php echo $_SESSION["email"]?>" disabled><br>
-						<input type="text" id="contact" value="<?php echo $_SESSION["contact"]?>" disabled><br>
+					<h1><u>Personal detail</u></h1>
+					<form style=" margin-left: 28%; margin-top: 7%;" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+					<span style="font-size: 2vw; text-align: center;">
+						Name: &nbsp;&ensp;&ensp;<span class = "detail"><?php echo $_SESSION['fname']." ".$_SESSION['lname']?></span> <br>
+						Email: &nbsp;&ensp;&ensp;<span class="detail"><?php echo $_SESSION["email"]?></span><br>
+						Contact:&ensp; <span class = "detail"><?php echo $_SESSION["contact"]?></span><br>
+					</span>
 						<input type="hidden" id="pass" oncopy="return false" onpaste="return false" placeholder="Enter password"><br>
-						<input type="button" id="reset" onclick="location.href='editprofile.php';" value="Edit profile" style="background-color: rgba(0,100,0,0.9);">
-						<input type="button" id="reset" onclick="location.href='logout.php';" value="    LogOut    " style="background-color: rgba(0,100,0,0.9);">
-						<input type="button" style="margin-left: 11%" id="reset" onclick="location.href='updatepass.php';" value="Update password" style="background-color: rgba(150,150,150,0.9);"><br>
-						<input type="button" id="reset" onclick="location.href='deleteprofile.php';" value="Delete Profile" style="background-color: rgba(255,0,0,0.9); margin-left: 15%">
+						<input type="button" id="reset" onclick="location.href='editprofile.php';" value="Edit profile" style="background-color: rgba(0,100,0,0);">
+						
+						<input type="button" style="margin-left:%" id="reset" onclick="location.href='updatepass.php';" value="Update password" style="background-color: rgba(150,150,150,0.9);"><br>
+						<input type="button" id="reset" onclick="location.href='deleteprofile.php';" value="Delete Profile?" style="background-color: rgba(255,0,0,0);padding: 0; color: red;float: right; border: none;">
 					</form>
 				</div>		
 			</div>
@@ -76,8 +77,8 @@
 						<li><a href="index.php"><span id="footerlive">LiveBlog</span></a></li>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="about.php">About</a></li>
-						<li><a href="contact.php">Contact</a></li>
-						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li>
+						<li><a href="contact.php">Contact</a></li><!-- 
+						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li> -->
 						<li style="border-right: none;">&copy;Copyright</li>
 					</ul>
 			</div>		

@@ -40,7 +40,7 @@
 				
 				$lname = test_input($_POST["lname"]);
 				
-				if($_POST["question"] == "Select your security question"){
+				if($_POST["question"] == "Select your question"){
 					$ques_err = "select a question";
 					$error = 1;
 				}
@@ -130,11 +130,11 @@
 													background-color: transparent;
 													color: #aaa;" name = "question">
 							<option>Select your security question</option>
-							<option>What was the name of your first pet?</option>
-							<option>Who is your favourite author?</option>
-							<option>What is your favourite dish?</option>
-							<option>Which is your favourite colour?</option>
-							<option>What is your hobby?</option>
+							<option>What was your first pet name</option>
+							<option>Who was your first crush</option>
+							<option>What is your favourite dish</option>
+							<option>What is your favourite colour</option>
+							<option>what do you call you girlfriend</option>
 						</select><span class="error">*<?php echo "$ques_err";?></span><br>
 						<input type="text" name="answer" value="<?php echo "$answer"?>" placeholder="Answer" pattern="[a-zA-Z]{3,30}"><span class="error">*<?php echo "$ans_err";?></span><br>
 						<input type="password" name="pass" id="password" oncopy="return false" placeholder="Password"><span class="error">*<?php echo "$pass_err";?></span><br>
@@ -152,7 +152,7 @@
 						    }
 						</script>
 						<input type="submit" id="submit" value="SignUp">
-						<input type="button" id="reset" onclick="location.href='register.php';" value="Reset"><br><br>
+						<input type="button" id="reset" onclick="location.href='login.php';" value="Reset"><br><br>
 						<span id="belowbutton">Already have an account ? <a href="login.php">Login</a></span>
 					</form>
 				</div>
@@ -162,8 +162,8 @@
 						<li><a href="index.php"><span id="footerlive">LiveBlog</span></a></li>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="about.php">About</a></li>
-						<li><a href="contact.php">Contact</a></li><!-- 
-						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li> -->
+						<li><a href="contact.php">Contact</a></li>
+						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li>
 						<li style="border-right: none;">&copy;Copyright</li>
 					</ul>
 			</div>			

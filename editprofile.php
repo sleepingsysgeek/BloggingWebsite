@@ -127,7 +127,7 @@
 			<div id="body" onclick="hide()">
 				<div id = "form">
 					<h1>Update Details</h1><br>
-					<h1 style="font-size: 1.5vw;">Email:<?php echo $_SESSION["email"]?></h1><br>
+					<h1 style="font-size: 1.5vw;">Email: <?php echo $_SESSION["email"]?></h1><br>
 					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 						<span class = "error"><?php echo $cnf_err?><br>* required fields</span><br>
 						<input type="text" name="fname" value="<?php echo $_SESSION['fname']?>"><span class="error">*<?php echo "$fname_err";?></span><br>
@@ -135,8 +135,8 @@
 						<input type="hidden" name="email" name="email" value="<?php echo $_SESSION["email"]?>">
 						<input type="text" name="contact" value="<?php echo $_SESSION["contact"]?>" ><span class="error">*<?php echo "$fname_err";?></span><br>
 						<input type="password" name="pass" oncopy="return false" onpaste="return false" placeholder="password"><span class="error">*<?php echo "$pass_err";?></span><br>
-						<input type="submit" id="submit" value="Update" style="background-color: rgba(0,100,0,0.9);">
-						<input type="button" id="reset" onclick="location.href='profile.php';" value="Cancel" style="background-color: rgba(0,100,0,0.9);"><br>
+						<input type="submit" id="submit" value="Update" style="background-color: rgba(0,100,0,0);">
+						<input type="button" id="reset" onclick="location.href='profile.php';" value="Cancel" style="background-color: rgba(0,100,0,0);"><br>
 					</form>
 				</div>		
 			</div>
@@ -145,8 +145,8 @@
 						<li><a href="index.php"><span id="footerlive">LiveBlog</span></a></li>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="about.php">About</a></li>
-						<li><a href="contact.php">Contact</a></li>
-						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li>
+						<li><a href="contact.php">Contact</a></li><!-- 
+						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li> -->
 						<li style="border-right: none;">&copy;Copyright</li>
 					</ul>
 			</div>		

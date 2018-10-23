@@ -56,7 +56,7 @@
 							$_SESSION["question"] = $row["question"];
 							$_SESSION["login"] = 1;
 						}
-						echo "<script type='text/javascript'>location.href='profile.php';</script>";
+						echo "<script type='text/javascript'>location.href='index.php';</script>";
 					}
 					else{
 						$message = "email id or password incorrect";
@@ -99,8 +99,8 @@
 						<li><a href="index.php"><span id="footerlive">LiveBlog</span></a></li>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="about.php">About</a></li>
-						<li><a href="contact.php">Contact</a></li>
-						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li>
+						<li><a href="contact.php">Contact</a></li><!-- 
+						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li> -->
 						<li style="border-right: none;">&copy;Copyright</li>
 					</ul>
 			</div>				

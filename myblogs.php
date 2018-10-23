@@ -66,7 +66,7 @@
 				</div>	
 			</div>
 			<div id="quotes" onclick="hide()">
-				<span> <p style="color: white; text-align: center; font-size: 2vw; margin: 0; padding-top: 10%; text-transform: uppercase;">WELCOME <?php echo $_SESSION["fname"]." ".$_SESSION["lname"];?>, GOOD TO SEE YOU.<br> SCROLL DOWN TO SEE YOUR BLOGS OR CREATE A NEW ONE.</p></span>
+				<span> <p style="color: white; text-align: center; font-size: 2vw; margin: 0; padding-top: 10%; text-transform: uppercase; ">WELCOME <?php echo $_SESSION["fname"]." ".$_SESSION["lname"];?>!! &nbsp; GOOD TO SEE YOU.<br><br> SCROLL DOWN TO SEE YOUR BLOGS OR CREATE A NEW ONE.</p></span>
 				<button id="createblogbutton" onclick="location.href='blog.php';">Create New Blog</button>
 			</div>
 			<?php
@@ -105,8 +105,8 @@
 						<li><a href="index.php"><span id="footerlive">LiveBlog</span></a></li>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="about.php">About</a></li>
-						<li><a href="contact.php">Contact</a></li>
-						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li>
+						<li><a href="contact.php">Contact</a></li><!-- 
+						<li style="border-right: none;"><a href="feedback.php">Feedback</a></li> -->
 						<li style="border-right: none; ">&copy;Copyright</li>
 					</ul>
 			</div>		
