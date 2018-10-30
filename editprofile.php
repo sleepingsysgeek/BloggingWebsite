@@ -24,7 +24,7 @@
 			}
 		</script>
 	</head>
-	<body> 
+	<body onscroll="hide()"> 
 		<?php 
 			if($_SESSION["login"] == 0){
 				echo "<script type='text/javascript'>location.href='login.php';</script>";
@@ -104,7 +104,7 @@
 				<div id="menu">
 					<ul>
 						<li><a href="index.php">HOME</a></li>
-						<li><a href="#blog">BLOG</a></li>
+						<li><a href="index.php#blog">BLOG</a></li>
 						<li><a href="about.php">ABOUT</a></li>
 						<li style="border-right: none;"><a href="contact.php ">CONTACT</a></li>
 					</ul>
@@ -130,7 +130,7 @@
 					<h1 style="font-size: 1.5vw;">Email: <?php echo $_SESSION["email"]?></h1><br>
 					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 						<span class = "error"><?php echo $cnf_err?><br>* required fields</span><br>
-						<input type="text" name="fname" value="<?php echo $_SESSION['fname']?>"><span class="error">*<?php echo "$fname_err";?></span><br>
+						<input type="text" autofocus="TRUE" name="fname" value="<?php echo $_SESSION['fname']?>"><span class="error">*<?php echo "$fname_err";?></span><br>
 						<input type="text" name="lname" value="<?php echo $_SESSION['lname']?>"><span class="error">*<?php echo "$lname_err";?></span><br>
 						<input type="hidden" name="email" name="email" value="<?php echo $_SESSION["email"]?>">
 						<input type="text" name="contact" value="<?php echo $_SESSION["contact"]?>" ><span class="error">*<?php echo "$fname_err";?></span><br>

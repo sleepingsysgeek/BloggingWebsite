@@ -16,7 +16,7 @@
 	 		}
 	 	</script>
 	</head>
-	<body>
+	<body onscroll="hide()">
 		<?php
 			if($_SESSION["login"] == 1){
 				echo "<script type='text/javascript'>location.href='profile.php';</script>";
@@ -119,16 +119,7 @@
 						<input type="text" name="lname" value="<?php echo "$lname"?>" placeholder="Last Name" pattern="[a-zA-Z]{3,30}"><br>
 						<input type="email" name="email" value="<?php echo "$email"?>" placeholder="email"><span class="error">*<?php echo "$email_err";?></span><br>
 						<input type="text" name="contact" pattern="[0-9]{10}" value="<?php echo "$contact"?>" placeholder="Contact Number" maxlength="10"><span class="error">*<?php echo "$contact_err";?></span><br>
-						<select id="select" style="font-size: 1.3vw;
-													font-family: arial;
-													padding: 2% 4%;
-													width:60%;
-													border: 2px solid white;
-													border-radius: 5px;
-													text-align: center;
-													margin: 1%;
-													background-color: transparent;
-													color: #aaa;" name = "question">
+						<select id="select" name = "question">
 							<option>Select your security question</option>
 							<option>What was the name of your first pet?</option>
 							<option>Who is your favourite author?</option>

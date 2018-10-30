@@ -24,7 +24,7 @@
 		</script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body> 
+	<body onscroll="hide()"> 
 		<?php 
 			if($_SESSION["login"] == 0){
 				echo "<script type='text/javascript'>location.href='login.php';</script>";
@@ -77,6 +77,7 @@
 					while($row = $result -> fetch_assoc()){
 						$title = $row["title"];
 						$blog = $row["blog"];
+						$id = $row["id"];
 						echo 
 						'<div id="blogcontainer" onclick="hide()">
 						<div id="detail">
@@ -86,10 +87,14 @@
 							</div>
 						</div>
 						<div id="blog">
-							<button id="floatbutton" onclick="location.href=\'#top\';">Top</button>
+							<button id="floatbutton" onclick="location.href=\'#top\';">TOP</button>
 							<div class="blog">
 								<br><br><br><span id="title"><strong>Title: </strong></span><span id="titletext">'.$title.'</span>
 								<p>'.$blog.'</p>
+								<form method="post" action="deleteblog.php">
+									<input type="hidden" name="id" value="'.$id.'">
+									<input type="submit" style="float:right; padding:5px; margin-right:15%; color:#bbb; width:auto;" value="Delete Blog">
+								</form>
 							</div>
 						</div></div>'	;
 					}	

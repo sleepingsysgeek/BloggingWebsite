@@ -16,7 +16,7 @@
 	 		}
 	 	</script>
 	</head>
-	<body>
+	<body onscroll="hide()">
 		<?php
 			if($_SESSION["login"] == 1){
 				echo "<script type='text/javascript'>location.href='profile.php';</script>";

@@ -27,7 +27,7 @@
 			}
 		</script>
 	</head>
-	<body> 
+	<body onscroll="hide()"> 
 		<a name="top"></a>
 		<?php
 			$server = "localhost";
@@ -99,7 +99,7 @@
 							</div>
 						</div>
 						<div id="blog">
-							<button id="floatbutton" onclick="location.href=\'#top\';">Top</button>
+							<button id="floatbutton" onclick="location.href=\'#top\';">TOP</button>
 							<div class="blog">
 								<br><br><br><span id="title"><strong>Title: </strong></span><span id="titletext">'.$title.'</span>
 								<p>'.$blog.'</p>

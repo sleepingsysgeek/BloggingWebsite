@@ -19,8 +19,17 @@ form input{
 	background-color: transparent;
 	color: white;
 }
-#profileemail:hover{
-	width: 80%;
+form select{
+	font-size: 1.3vw;
+	font-family: arial;
+	padding: 2% 4%;
+	width:60%;
+	border: 2px solid white;
+	border-radius: 5px;
+	text-align: center;
+	margin: 1%;
+	background-color: transparent;
+	color: #aaa;
 }
 
 .detail{
@@ -314,7 +323,7 @@ form input{
 #footermargin{
 	position: ;
 	width: 100%;
-	height: 10%;
+	height: 2%;
 	opacity: 0.7;
 	background-color: #000;
 }

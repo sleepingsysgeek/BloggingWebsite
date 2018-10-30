@@ -24,14 +24,14 @@
 			}
 		</script>
 	</head>
-	<body> 
+	<body onscroll="hide()"> 
 		<div id="container" >
 			<div id = "header">
 				<div id="logo" onclick="location.href='index.php';"><img src="logo.png"></div>
 				<div id="menu">
 					<ul>
 						<li><a href="index.php">HOME</a></li>
-						<li><a href="#blog">BLOGS</a></li>
+						<li><a href="index.php#blog">BLOGS</a></li>
 						<li><a href="about.php">ABOUT</a></li>
 						<li style="border-right: none;"><a href="contact.php ">CONTACT</a></li>
 					</ul>

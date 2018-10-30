@@ -8,7 +8,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body> 
+	<body onscroll="hide()"> 
 		<?php 
 			$error = 0; 
 			$email = $pass = $question = $answer = $message = $fname = $lname = "";
@@ -42,7 +42,7 @@
 					$answer = $_POST["answer"];
 					
 					if(empty($_POST["cnfpass"])){
-						$cnf_err = "confirm password";
+						$cnf_err = "confirm password ";
 						$error = 1;
 					}
 				}

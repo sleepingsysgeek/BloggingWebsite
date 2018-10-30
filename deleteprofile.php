@@ -24,7 +24,7 @@
 			}
 		</script>
 	</head>
-	<body> 
+	<body onscroll="hide()"> 
 		<?php 
 			if($_SESSION["login"] == 0){
 				echo "<script type='text/javascript'>location.href='login.php';</script>";
@@ -78,7 +78,7 @@
 				<div id="menu">
 					<ul>
 						<li><a href="index.php">HOME</a></li>
-						<li><a href="#blog">BLOG</a></li>
+						<li><a href="index.php#blog">BLOG</a></li>
 						<li><a href="about.php">ABOUT</a></li>
 						<li style="border-right: none;"><a href="contact.php ">CONTACT</a></li>
 					</ul>
@@ -100,8 +100,8 @@
 			</div>
 			<div id="body" onclick="hide()">
 				<div id = "form">
-					<h1>Your Details</h1><br>
-					<h1 class="error" style="font-size: 1.2vw;">!!!Your all blogs and details will be deleted.</h1><br>
+					<h1>Are you sure?</h1><br>
+					<h1 class="error" style="font-size: 1.2vw;">!!!All your blogs and details will be deleted.</h1><br>
 					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 						<span class = "error"><?php echo $cnf_err?><br>* required fields</span><br>
 						<input type="text" id="fname" value="<?php echo $_SESSION['fname']?>" disabled="true"><br>
@@ -109,8 +109,8 @@
 						<input type="email" id="profileemail" name="email" value="<?php echo $_SESSION["email"]?>" disabled><br>
 						<input type="text" id="contact" value="<?php echo $_SESSION["contact"]?>" disabled><br>
 						<input type="password" name="pass" oncopy="return false" onpaste="return false" placeholder="password"><span class="error">*<?php echo "$pass_err";?></span><br>
-						<input type="submit" id="reset" value="Confirm Profile Delete" style="background-color: rgba(255,0,0,0.9); padding:2% 1.25%;">
-						<input type="button" id="reset" onclick="location.href='profile.php';" value="Cancel" style="background-color: rgba(0,100,0,0.9);  padding:2% 1.25%;"><br>
+						<input type="submit" id="reset" value="Confirm Profile Delete" style="background-color: rgba(255,0,0,0); padding:2% 1.25%;">
+						<input type="button" id="reset" onclick="location.href='profile.php';" value="Cancel" style="background-color: rgba(0,100,0,0);  padding:2% 1.25%;"><br>
 					</form>
 				</div>		
 			</div>

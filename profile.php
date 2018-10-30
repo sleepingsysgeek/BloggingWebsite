@@ -24,7 +24,7 @@
 			}
 		</script>
 	</head>
-	<body> 
+	<body onscroll="hide()"> 
 		<?php 
 			if($_SESSION["login"] == 0){
 				echo "<script type='text/javascript'>location.href='login.php';</script>";
