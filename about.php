@@ -67,7 +67,7 @@
 						Vision:<br><span class = "detail"><strong>
 						Providing a platform to share thoughts and experiences. All that we serve is quality and we service all with excellence.</strong></span> <br><br>
 						<!-- Email: &nbsp;&ensp;&ensp;<span class="detail"></span><br> -->
-						Developer:<br><br><span class = "detail">Praveen Mishra<br>Poonam Verma<br>Gautam Prasad Gupta<br>Ashutosh Choudhary<br>Shravan Kumar</span><br>
+						Developer:<br><br><span class = "detail"><a href="scis.uohyd.ac.in/~mc17mc15/">Praveen Mishra  </a> || <a href="scis.uohyd.ac.in/~mc17mc17/">  Poonam Verma</span><br>
 					</span>
 						<input type="hidden" id="pass" oncopy="return false" onpaste="return false" placeholder="Enter password"><br>
 					</form>
