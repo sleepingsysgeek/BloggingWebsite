@@ -48,9 +48,9 @@
 				$pass = md5($_POST["pass"]);
 				
 				if($error == 0){
-					$server = "localhost";
-					$username = "joker";
-					$password = "djoker";
+					$server = "10.5.0.63";
+					$username = "root";
+					$password = "passwd@123";
 					$db = "project";
 					$conn = new mysqli($server,$username,$password,$db);
 					if($conn->connect_error){
