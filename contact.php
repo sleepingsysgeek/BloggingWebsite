@@ -65,8 +65,8 @@
 					<form style=" margin-left: 28%; margin-top: 7%;" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 					<span style="font-size: 2vw; text-align: center;">
 						Email: &nbsp;&ensp;&ensp;<span class = "detail">liveblogsus@gmail.com</span> <br>
-						<!-- Email: &nbsp;&ensp;&ensp;<span class="detail"></span><br> -->
-						Contact:&ensp; <span class = "detail">7901388009</span><br>
+						<!-- Email: &nbsp;&ensp;&ensp;<span class="detail"></span><br>
+<!-- 						Contact:&ensp; <span class = "detail">mpr</span><br> -->
 					</span>
 						<input type="hidden" id="pass" oncopy="return false" onpaste="return false" placeholder="Enter password"><br>
 					</form>
